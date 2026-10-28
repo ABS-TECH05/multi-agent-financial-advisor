@@ -1,0 +1,6 @@
+# Dependencies for the Streamlit dashboard only.
+# Backend dependencies are installed separately by Render from root requirements.txt.
+streamlit>=1.45,<2.0
+requests>=2.31,<3.0
+pandas>=2.2,<3.0
+pyarrow>=19.0,<25.0
