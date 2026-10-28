@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import date
 
 import requests
@@ -15,7 +16,7 @@ st.caption(
     "Multi-Agent Financial Advisor | Portfolio Analysis and Risk Assessment"
 )
 
-DEFAULT_API_URL = "http://127.0.0.1:8001"
+DEFAULT_API_URL = os.getenv("INTELLIVEST_API_URL", "https://intellivest-api.onrender.com")
 api_url = st.sidebar.text_input("Backend API URL", DEFAULT_API_URL).rstrip("/")
 
 
@@ -42,8 +43,7 @@ try:
     st.sidebar.success("Backend connected")
 except requests.RequestException as exc:
     st.error(
-        "Cannot connect to FastAPI. Start the backend on port 8001 "
-        "in a separate terminal."
+        "Cannot connect to the INTELLIVEST backend. Check its URL and deployment status."
     )
     st.code(str(exc))
     st.stop()
