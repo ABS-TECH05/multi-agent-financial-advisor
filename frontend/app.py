@@ -16,7 +16,7 @@ st.caption(
     "Multi-Agent Financial Advisor | Portfolio Analysis and Risk Assessment"
 )
 
-DEFAULT_API_URL = os.getenv("INTELLIVEST_API_URL", "https://intellivest-api.onrender.com")
+DEFAULT_API_URL = os.getenv("INTELLIVEST_API_URL", "https://multi-agent-financial-advisor.onrender.com")
 api_url = st.sidebar.text_input("Backend API URL", DEFAULT_API_URL).rstrip("/")
 
 
